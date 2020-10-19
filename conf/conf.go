@@ -82,6 +82,7 @@ type PathConf struct {
 	ReadPass             string                   `yaml:"readPass"`
 	ReadIps              []string                 `yaml:"readIps"`
 	ReadIpsParsed        []interface{}            `yaml:"-"`
+	DisableServerUDPReceive bool		      `yaml:"rtpDisable"`
 }
 
 type Conf struct {

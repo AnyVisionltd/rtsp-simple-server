@@ -561,7 +561,10 @@ func (c *client) handleRequest(req *base.Request) error {
 						return &v
 					}(),
 					ClientPorts: th.ClientPorts,
-					ServerPorts: &[2]int{c.p.conf.RtpPort, c.p.conf.RtcpPort},
+				}
+
+				if !c.path.conf.DisableServerUDPReceive {
+					th.ServerPorts = &[2]int{c.p.conf.RtpPort, c.p.conf.RtcpPort}
 				}
 
 				c.conn.WriteResponse(&base.Response{

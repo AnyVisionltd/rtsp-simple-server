@@ -48,6 +48,9 @@ paths:
     # is connected, saving bandwidth
     sourceOnDemand: no
 
+    # Enable/Disable rtp/rtcp ports on specific stream
+    rtpDisable: false
+
     # command to run when this path is loaded by the program.
     # this can be used, for example, to publish a stream and keep it always opened.
     # This is terminated with SIGINT when the program closes.
