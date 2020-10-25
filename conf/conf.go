@@ -341,16 +341,6 @@ func Load(fpath string) (*Conf, error) {
 		if pconf.ReadUser != "" && pconf.ReadPass == "" || pconf.ReadUser == "" && pconf.ReadPass != "" {
 			return nil, fmt.Errorf("read username and password must be both filled")
 		}
-		if pconf.ReadUser != "" {
-			if !regexp.MustCompile("^[a-zA-Z0-9]+$").MatchString(pconf.ReadUser) {
-				return nil, fmt.Errorf("read username must be alphanumeric")
-			}
-		}
-		if pconf.ReadPass != "" {
-			if !regexp.MustCompile("^[a-zA-Z0-9]+$").MatchString(pconf.ReadPass) {
-				return nil, fmt.Errorf("read password must be alphanumeric")
-			}
-		}
 		if pconf.ReadUser != "" && pconf.ReadPass == "" || pconf.ReadUser == "" && pconf.ReadPass != "" {
 			return nil, fmt.Errorf("read username and password must be both filled")
 		}
